@@ -3,6 +3,7 @@ name: Build and Publish Docker Image
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:  # This enables the manual "Run workflow" button
 
 env:
   REGISTRY: ghcr.io
@@ -10,6 +11,7 @@ env:
 
 jobs:
   build-and-push:
+    # ... (rest of the job remains the same as before)
     runs-on: ubuntu-latest
     permissions:
       contents: read
